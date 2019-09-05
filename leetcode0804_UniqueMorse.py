@@ -1,15 +1,33 @@
 #!/usr/bin/env python
 #coding: utf-8
+import collections
 
-m_map = {"a":".-","b":"-...","c":"-.-.","d":"-..","e":".","f":"..-.","g":"--.","h":"....","i":"..","j":".---","k":"-.-","l":".-..","m":"--","n":"-.","o":"---","p":".--.","q":"--.-","r":".-.","s":"...","t":"-","u":"..-","v":"...-","w":".--","x":"-..-","y":"-.--","z":"--.."}
+#inputWords = ["gin", "zen", "gig", "msg"]
+inputWords = ["aaa", "aaa", "bbb", "ccc", "ddd", "ddd"]
 
-def changeMorse(message):
-    newMessage =""
-    for i in message:
-        newMessage += m_map[i]
-    return newMessage
+class Solution(object):
+    m_map = {"a":".-","b":"-...","c":"-.-.","d":"-..","e":".","f":"..-.","g":"--.","h":"....","i":"..","j":".---","k":"-.-","l":".-..","m":"--","n":"-.","o":"---","p":".--.","q":"--.-","r":".-.","s":"...","t":"-","u":"..-","v":"...-","w":".--","x":"-..-","y":"-.--","z":"--.."}
+    inputLists=[]
+    def changeMorse(self, message):
+        newMessage =""
+        for i in message:
+            newMessage += self.m_map[i]
+        return newMessage
 
-print changeMorse("xy")
-print m_map["a"]
+    def uniqueMorseRepresentations(self, words):
+        """
+        :type words: List[str]
+        :rtype: int
+        """
+        for i in inputWords:
+            self.inputLists.append(self.changeMorse(i))
+        c = collections.Counter(self.inputLists)
+        return len(c)
+
+instance001 = Solution()
+print instance001.uniqueMorseRepresentations(inputWords)
+
+
+
 
 #https://leetcode.com/problems/unique-morse-code-words/
