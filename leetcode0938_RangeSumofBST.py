@@ -11,4 +11,4 @@ root = [10,5,15,3,7,18]
 L = 7
 R = 15
 ins001 = Solution()
-ins001.rangeSumBST(root, L, R)
+ins001.rangeSumBST([10,5,15,3,7,18], L, R)
