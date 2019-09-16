@@ -3,21 +3,32 @@
 
 Z=[]
 X = [[1,1,0],[1,0,1],[0,0,0]]
+'''
+Xのリストを反転させる関数を作成する。
+0 -> 1
+1 -> 0
 
+'''
 # 数値変換の関数
 def flip(n):
     if n == 0:
         return 1
     else:
         return 0
-
+# リストからリストを取り出す
 def mapped(x):
     for i in x:
+        # mapにて数値反転を一括で行い、リストZに格納する。
         Z.append(map(flip,i))
     return Z
 
 print 'mappedの結果：　 ', mapped(X)
 
+
+'''
+以下はリストZにappendする処理
+Z = [処理内容 for i in x]
+'''
 def mapped2(x):
     return [map(flip,i) for i in x]
 
