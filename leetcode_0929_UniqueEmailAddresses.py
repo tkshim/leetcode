@@ -10,6 +10,12 @@ for s in L:
     index=s.find('@')
     domainName = s[index:len(s)]
     d += domainName
+    
+    #補足
+    '''
+    splitでも＠の前後で分割可能
+    name,domain=i.split("@")
+    '''
 
     # step2　.はスキップ、＋や＠が現れたら処理を中断
     # 上記以外は、文字列をxに代入
